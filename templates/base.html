@@ -5,6 +5,12 @@
     </head>
 <body>
 
+        {% if session['logged_in'] == True %}
+        <li><a href="/logout">Logout <span class="sr-only"></span></a></li>
+      {% else %}
+        <li><a href="/login">Login <span class="sr-only"></span></a></li>
+      {% endif %}
+
     {% block content %}
     {% endblock %}
 
