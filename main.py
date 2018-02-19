@@ -76,6 +76,7 @@ def register():
 @app.route('/logout')
 def logout():
     del session['email']
+    session['logged_in'] = False
     return redirect('/')
 
 @app.route('/', methods=['POST', 'GET'])
